@@ -9,7 +9,7 @@ client = OpenAI(
     api_key = os.getenv('QWEN_API_KEY'),
     base_url = os.getenv('QWEN_BASE_URL')
 )
-model = "qwen3.6-flash"
+MODEL = "qwen3.6-flash"
 
 def get_weather(city: str) -> str:
     fake_db = {"beijing": "Sunny, 25°C", "london": "Rainy, 12°C", "tokyo": "Cloudy, 18°C"}
@@ -45,7 +45,7 @@ def run_agent(user_input, max_step = 5):
     for step in range(max_step):
 
         response = client.chat.completions.create(
-            model = model,
+            model = MODEL,
             messages = messages,
             tools = [TOOL_SCHEMA]
         )
