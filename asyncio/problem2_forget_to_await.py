@@ -1,8 +1,4 @@
-# Here we try keeping the sequence of creating tasks,
-# but schuffling the sequence of awaiting them
-
-# turns out tasks are executed according to the order of their creation, i.e. place on the schedule list, not the awwait
-# but it is important to note that, you do need to await the finishing of the first awaited object, until the main() moves on
+# forgetting awaiting a task can lead to finishing the main() without task2
 
 import asyncio
 import time
@@ -24,16 +20,15 @@ async def main():
     coro3 = fetch(1, 3)
 
     ## task
-    # schedule list: task 1 -> 2 -> 3
+    # can also be created with task = asyncio.create_task(fetch(2, 1))
     task1 = asyncio.create_task(coro1)
     task2 = asyncio.create_task(coro2)
     task3 = asyncio.create_task(coro3)
 
     ## await tasks
-    # await order: task 3 -> 1 -> 2; execution 1 -> 2 -> 3
-    result3 = await task3   # but main() will NOT move forward until task3 comes back
     result1 = await task1
-    result2 = await task2
+    result2 = task2    # forget to await task2, the loop skip this line as task 2 has not been finished
+    result3 = await task3  
 
     print(result1, result2, result3)
 
@@ -41,4 +36,4 @@ if __name__ == '__main__':
     start = time.perf_counter()
     asyncio.run(main())
     end = time.perf_counter()
-    print(f'Total time = {end - start:.3f}s')   # concurrent, the execution order is still 1 - 2 - 3
+    print(f'Total time = {end - start:.3f}s')   # task 1, 2, 3 ran concurrently, total time = the longest = 3s

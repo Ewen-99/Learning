@@ -1,3 +1,5 @@
+# function like request is non awaitable
+
 import asyncio
 import time
 
@@ -7,6 +9,7 @@ async def fetch(delay, id):
     # the finishing of sleep will awake event loop
     await asyncio.sleep(delay)  
     print(f'Fetch id {id} completed, taking {delay} seconds')
+    return id
 
 async def blocking_task(delay):
     print(f'Working on a synchronous function which will take {delay} seconds')
@@ -18,8 +21,7 @@ async def main():
     ## blocking call
     # a blocking call inside the task will not yield control to event loop
     # comment out the previous task 3 and uncomment here to try it out
-    block_call = blocking_task(5)
-    task1 = asyncio.create_task(block_call)
+    task1 = asyncio.create_task(blocking_task(5))
 
     ## task
     task2 = asyncio.create_task(fetch(3, 2))

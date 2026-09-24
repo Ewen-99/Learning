@@ -9,6 +9,7 @@ async def fetch(id, delay):
     # the finishing of sleep will awake event loop
     await asyncio.sleep(delay)  
     print(f'Fetch id {id} completed, taking {delay} seconds')
+    return id
 
 async def main():
 
