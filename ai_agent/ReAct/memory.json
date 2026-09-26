@@ -1,0 +1,18 @@
+[
+  {
+    "question": "How many hours are there in a day?",
+    "summary": "Question: How many hours are there in a day? No tools were called, so there were no tool arguments or observations. The assistant used general factual knowledge. Final answer: There are 24 hours in a day."
+  },
+  {
+    "question": "How can AI help develop code better?",
+    "summary": "Question: How can AI help develop code better? No tools were called, so there were no arguments or tool observations; the assistant relied on general knowledge. It concluded AI can assist with design, boilerplate, tests, debugging, optimization, style, explanations, reviews, and docs, with humans validating decisions."
+  },
+  {
+    "question": "How many hours are there in a day?",
+    "summary": "Question: How many hours are there in a day? The assistant called no tools, so there were no arguments or observations, and used general knowledge. Final answer: There are 24 hours in a day."
+  },
+  {
+    "question": "How is the weather in Germany today?How is the weather in China today?",
+    "summary": "Question: Germany and China weather today. No tools called (no arguments) since weather tool accepts time, not location. Observation: no location-specific data. Final answer: cannot provide both separately; user must specify a time for available weather check."
+  }
+]

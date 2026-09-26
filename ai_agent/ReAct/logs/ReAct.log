@@ -1,0 +1,43 @@
+INFO:root:--- Chat with LLM Starts ---
+INFO:root:ROLE: user, QUESTION: How can AI help develop code better?
+INFO:httpx2:HTTP Request: POST https://token-plan.ap-southeast-1.maas.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:root:THOUGHT: Thought: General knowledge; no tool needed.
+
+AI can improve code development by helping with design, generating boilerplate and tests, finding bugs, optimizing performance, enforcing style, explaining code, and supporting code review and documentation—while humans validate and own the decisions.
+INFO:root:ROLE: assistant, FINAL: Thought: General knowledge; no tool needed.
+
+AI can improve code development by helping with design, generating boilerplate and tests, finding bugs, optimizing performance, enforcing style, explaining code, and supporting code review and documentation—while humans validate and own the decisions.
+INFO:httpx2:HTTP Request: POST https://token-plan.ap-southeast-1.maas.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+WARNING:root:Memory entries > 5, trimming memories
+INFO:root:Memory retrieved from past conversation: [{'question': 'Can I go out at 07:00 or 08:00, check my schedules and the weather?', 'summary': 'Question: whether to go out at 07:00 or 08:00. It called schedule(07:00), schedule(08:00), weather(07:00), weather(08:00), observing 07:00: studying at home, sunny; 08:00: idle, cloudy. Final answer: go out at 08:00.'}, {'question': 'How can AI help develop code better?', 'summary': 'Question: How can AI help develop code better? No tools were called. The assistant answered directly, noting AI assists with design, boilerplate/tests, explanation, bug finding, optimization, style, reviews, docs, and debugging. Final answer: AI improves code development through support while humans review and validate.'}, {'question': 'How many hours are there in a day?', 'summary': 'Question: How many hours are there in a day? No tools were called, so there were no tool arguments or observations. The assistant used general factual knowledge. Final answer: There are 24 hours in a day.'}, {'question': 'How can AI help develop code better?', 'summary': 'Question: How can AI help develop code better? No tools were called, so there were no arguments or tool observations; the assistant relied on general knowledge. It concluded AI can assist with design, boilerplate, tests, debugging, optimization, style, explanations, reviews, and docs, with humans validating decisions.'}]
+INFO:root:--- Chat with LLM Starts ---
+INFO:root:ROLE: user, QUESTION: How many hours are there in a day?
+INFO:httpx2:HTTP Request: POST https://token-plan.ap-southeast-1.maas.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:root:THOUGHT: Thought: This is a general knowledge question; no tool is needed.
+
+Answer: There are 24 hours in a day.
+INFO:root:ROLE: assistant, FINAL: Thought: This is a general knowledge question; no tool is needed.
+
+Answer: There are 24 hours in a day.
+INFO:httpx2:HTTP Request: POST https://token-plan.ap-southeast-1.maas.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:root:Memory retrieved from past conversation: [{'question': 'Can I go out at 07:00 or 08:00, check my schedules and the weather?', 'summary': 'Question: whether to go out at 07:00 or 08:00. It called schedule(07:00), schedule(08:00), weather(07:00), weather(08:00), observing 07:00: studying at home, sunny; 08:00: idle, cloudy. Final answer: go out at 08:00.'}, {'question': 'How can AI help develop code better?', 'summary': 'Question: How can AI help develop code better? No tools were called. The assistant answered directly, noting AI assists with design, boilerplate/tests, explanation, bug finding, optimization, style, reviews, docs, and debugging. Final answer: AI improves code development through support while humans review and validate.'}, {'question': 'How many hours are there in a day?', 'summary': 'Question: How many hours are there in a day? No tools were called, so there were no tool arguments or observations. The assistant used general factual knowledge. Final answer: There are 24 hours in a day.'}, {'question': 'How can AI help develop code better?', 'summary': 'Question: How can AI help develop code better? No tools were called, so there were no arguments or tool observations; the assistant relied on general knowledge. It concluded AI can assist with design, boilerplate, tests, debugging, optimization, style, explanations, reviews, and docs, with humans validating decisions.'}, {'question': 'How many hours are there in a day?', 'summary': 'Question: How many hours are there in a day? The assistant called no tools, so there were no arguments or observations, and used general knowledge. Final answer: There are 24 hours in a day.'}]
+INFO:root:--- Chat with LLM Starts ---
+INFO:root:ROLE: user, QUESTION: How is the weather in Germany today?How is the weather in China today?
+INFO:httpx2:HTTP Request: POST https://token-plan.ap-southeast-1.maas.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:root:THOUGHT: Thought: The weather tool only accepts a time, not a location, so I can’t check Germany and China separately.
+
+Action: None
+
+Observation: No location-specific weather data is available through the tool.
+
+Answer: I can’t provide today’s weather for Germany and China separately; specify a time for the available weather check.
+INFO:root:ROLE: assistant, FINAL: Thought: The weather tool only accepts a time, not a location, so I can’t check Germany and China separately.
+
+Action: None
+
+Observation: No location-specific weather data is available through the tool.
+
+Answer: I can’t provide today’s weather for Germany and China separately; specify a time for the available weather check.
+INFO:httpx2:HTTP Request: POST https://token-plan.ap-southeast-1.maas.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+WARNING:root:Memory entries > 5, trimming memories
+INFO:root:Memory retrieved from past conversation: [{'question': 'How many hours are there in a day?', 'summary': 'Question: How many hours are there in a day? No tools were called, so there were no tool arguments or observations. The assistant used general factual knowledge. Final answer: There are 24 hours in a day.'}, {'question': 'How can AI help develop code better?', 'summary': 'Question: How can AI help develop code better? No tools were called, so there were no arguments or tool observations; the assistant relied on general knowledge. It concluded AI can assist with design, boilerplate, tests, debugging, optimization, style, explanations, reviews, and docs, with humans validating decisions.'}, {'question': 'How many hours are there in a day?', 'summary': 'Question: How many hours are there in a day? The assistant called no tools, so there were no arguments or observations, and used general knowledge. Final answer: There are 24 hours in a day.'}, {'question': 'How is the weather in Germany today?How is the weather in China today?', 'summary': 'Question: Germany and China weather today. No tools called (no arguments) since weather tool accepts time, not location. Observation: no location-specific data. Final answer: cannot provide both separately; user must specify a time for available weather check.'}]

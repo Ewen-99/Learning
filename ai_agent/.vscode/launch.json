@@ -1,0 +1,34 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        // Layer 1: debugging vscode workspace folder
+        {
+            "name": "Python Debugger: Current File",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal"
+        },
+    // Layer 2: debugging subfolder
+        {
+            "name": "Python Debugger: Subfolder main",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/ReAct/main.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}/ReAct"
+        },   
+    // Layer 3: debugging modules     
+        {
+            "name": "Python Debugger: apps.memory",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "apps.memory",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}/ReAct"
+        }
+    ]
+}
