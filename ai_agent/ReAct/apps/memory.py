@@ -38,7 +38,7 @@ def _msg_to_text(m: dict) -> str:
     else:
         return None
 
-def summarize_messages(messages: list) -> str:
+def summarize_messages(messages: list) -> str | None:
     transcript = "\n".join(_msg_to_text(m) for m in messages)
 
     if not transcript:

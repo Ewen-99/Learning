@@ -23,7 +23,7 @@ questions = [
     # 'Can I go out at 07:00 or 08:00, check my schedules and the weather?',
     'How can AI help develop code better?',
     'How many hours are there in a day?',
-    'How is the weather in Germany today?'
+    'How is the weather in Germany today?',
     'How is the weather in China today?'
 
 ]
