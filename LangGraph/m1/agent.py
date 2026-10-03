@@ -1,13 +1,15 @@
 
 from langgraph.graph import MessagesState, StateGraph, START, END
-from langchain_core.messages import HumanMessage, AIMessage
+from langchain_core.messages import HumanMessage, AIMessage, SystemMessage
 from langchain_openai import ChatOpenAI
 from langgraph.prebuilt import ToolNode
 from langgraph.prebuilt import tools_condition
 import os
 import random
-
+from dotenv import load_dotenv
 from apps.qwen_config import qwen_llm
+
+load_dotenv()
 
 # define tools
 def MMM(a: int, b: int):
@@ -60,8 +62,9 @@ instead, LangGraph merge the update into the state using reducer,
 as defined in the schema MessageState Annotated[List[AnyMessage], add_messages]
 '''
 
+sys_msg = SystemMessage(content="You are a helpful assistant", name="system")
 def tool_calling_llm(state: MessagesState):
-    return {"messages": [llm_with_tools.invoke(state["messages"])]}
+    return {"messages": [llm_with_tools.invoke([sys_msg] + state["messages"])]}
 
 # build graph
 builder = StateGraph(MessagesState)
@@ -81,12 +84,10 @@ BASE_DIR = Path(__file__).resolve().parent
 FILENAME = "agent.png"
 save_png(graph, BASE_DIR, FILENAME)
 
-chat1 = [HumanMessage(content=f"What is the result of 2 multiply by 3 and a random number.", name="Ewen")]
-chat2 = [HumanMessage(content=f"What is the capital city of France?", name="Ewen")]
+chat1 = [HumanMessage(content=f"What is the result of 10 DDD 5 then MMM 3 then AAA 1 then DED 1.", name="Ewen")]
 
 msg_chat1 = graph.invoke({"messages": chat1})
-msg_chat2 = graph.invoke({"messages": chat2})
 
-all_msg = msg_chat1["messages"] + msg_chat2["messages"]
+all_msg = msg_chat1["messages"]
 for msg in all_msg:
     msg.pretty_print()
